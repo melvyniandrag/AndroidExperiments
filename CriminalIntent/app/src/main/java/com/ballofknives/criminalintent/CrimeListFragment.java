@@ -1,5 +1,6 @@
 package com.ballofknives.criminalintent;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,9 +30,20 @@ public class CrimeListFragment extends ListFragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        ((CrimeAdapter)getListAdapter()).notifyDataSetChanged();
+    }
+
+    @Override
     public void onListItemClick(@NonNull ListView l, @NonNull View v, int position, long id) {
         Crime c = ((CrimeAdapter)getListAdapter()).getItem(position);
         Toast.makeText(getContext(), c.getTitle(), Toast.LENGTH_LONG).show();
+
+        //Intent i = new Intent(getActivity(), CrimeActivity.class);
+        Intent i = new Intent(getActivity(), CrimePagerActivity.class);
+        i.putExtra(CrimeFragment.EXTRA_CRIME_ID, c.getId());
+        startActivity(i);
     }
 
     private class CrimeAdapter extends ArrayAdapter<Crime>{
