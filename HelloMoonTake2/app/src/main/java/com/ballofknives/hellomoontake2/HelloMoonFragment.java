@@ -14,12 +14,19 @@ import androidx.fragment.app.Fragment;
 public class HelloMoonFragment extends Fragment {
     private AudioPlayer mPlayer = new AudioPlayer();
     private Button mPlayButton;
+    private Button mPauseButton;
     private Button mStopButton;
 
     @Override
     public void onDestroy() {
         super.onDestroy();
         mPlayer.stop();
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
     }
 
     @Nullable
@@ -31,6 +38,13 @@ public class HelloMoonFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 mPlayer.play(getActivity());
+            }
+        });
+        mPauseButton = (Button)v.findViewById(R.id.hellomoon_pauseButton);
+        mPauseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mPlayer.pause();
             }
         });
         mStopButton = (Button)v.findViewById(R.id.hellomoon_stopButton);
