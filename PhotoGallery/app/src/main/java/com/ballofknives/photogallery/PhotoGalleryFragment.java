@@ -8,6 +8,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Gallery;
 import android.widget.GridView;
@@ -71,6 +73,19 @@ public class PhotoGalleryFragment extends VisibleFragment {
         View v = inflater.inflate(R.layout.fragment_photo_gallery, container, false);
         mGridView = (GridView)v.findViewById(R.id.gridView);
         setupAdapter();
+
+        mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                GalleryItem item = mItems.get(i);
+                Uri photoPageUri = Uri.parse(item.getPhotoPageUrl());
+                //Intent intent = new Intent(Intent.ACTION_VIEW, photoPageUri);
+                Intent intent = new Intent(getActivity(), PhotoPageActivity.class);
+                intent.setData(photoPageUri);
+                startActivity(intent);
+            }
+        });
+
         return v;
     }
 
