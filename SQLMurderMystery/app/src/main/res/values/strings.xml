@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SQLMurderMystery</string>
+    <string name="app_title">SQL Murder Mystery</string>
+    <string name="about_button">About</string>
+    <string name="edit_text_hint">Enter an SQL query to be run by SQLite</string>
+    <string name="prompt_button">Prompt</string>
+    <string name="schema_button">Schema</string>
+    <string name="notepad_button">Notepad</string>
+    <string name="run_query_button">Run Query</string>
+    <string name="query_output">Query Output</string>
+</resources>
