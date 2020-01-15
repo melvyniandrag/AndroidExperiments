@@ -6,6 +6,8 @@
     <string name="prompt_button">Prompt</string>
     <string name="schema_button">Schema</string>
     <string name="notepad_button">Notepad</string>
-    <string name="run_query_button">Run Query</string>
+    <string name="run_query_button">Run Query ( No Semicolon Please )</string>
     <string name="query_output">Query Output</string>
+    <string name="see_solution">See Solution</string>
+    <string name="check_solution">Check Solution</string>
 </resources>
