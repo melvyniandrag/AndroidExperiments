@@ -73,7 +73,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public void openDataBase() throws SQLException{
         String myPath = DB_PATH + DB_NAME;
-        database = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+        database = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READWRITE);
     }
 
     @Override
@@ -106,6 +106,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor rawQuery(String queryString){
         try{
+            Log.e(TAG, "Running Query:\n " + queryString);
             return database.rawQuery(queryString, null, null);
         } catch ( Exception e ){
             return null;
