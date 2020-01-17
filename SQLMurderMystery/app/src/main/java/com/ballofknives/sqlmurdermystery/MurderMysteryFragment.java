@@ -40,6 +40,7 @@ public class MurderMysteryFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 runQuery.setEnabled(false);
+                runQuery.setClickable(false);
                 tl.removeAllViews();
 
                 String queryString = queryText.getText().toString();
@@ -48,6 +49,7 @@ public class MurderMysteryFragment extends Fragment {
 
                 if ( queryString.length() == 0){
                     runQuery.setEnabled(true);
+                    runQuery.setClickable(true);
                     return;
                 }
                 if(queryString.substring(queryString.length() - 1).equals(";")){
@@ -62,11 +64,13 @@ public class MurderMysteryFragment extends Fragment {
                     if(c == null){
                         reportQueryError("NO RESULTS. POSSIBLE ILLEGAL QUERY.");
                         runQuery.setEnabled(true);
+                        runQuery.setClickable(true);
                         return;
                     }
                     if(c.getCount() > MAX_RESULTS){
                         reportQueryError("Too many results in query. Limit query results using a more specific query, e.g. using a WHERE or LIMIT statement.");
                         runQuery.setEnabled(true);
+                        runQuery.setClickable(true);
                         return;
                     }
                     if(c.moveToFirst()){
@@ -79,6 +83,7 @@ public class MurderMysteryFragment extends Fragment {
                     }
                 }
                 runQuery.setEnabled(true);
+                runQuery.setClickable(true);
             }
         });
 

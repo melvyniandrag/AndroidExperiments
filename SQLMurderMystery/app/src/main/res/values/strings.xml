@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SQLMurderMystery</string>
+    <string name="app_name">SQL Murder Mystery</string>
     <string name="app_title">SQL Murder Mystery</string>
     <string name="about_button">About</string>
     <string name="edit_text_hint">Enter an SQL query to be run by SQLite</string>
