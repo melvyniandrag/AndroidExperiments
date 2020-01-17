@@ -10,7 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:layout_weight="1"
-        android:text="@string/run_query_button" />
+        android:text="@string/run_query_button"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/holo_green_dark"
+        android:textColor="@android:color/white"/>
 
         <EditText
             android:id="@+id/queryEditText"
@@ -21,7 +27,9 @@
             android:background="@drawable/border"
             android:gravity="top|start"
             android:inputType="textCapSentences|textMultiLine"
-            android:scrollHorizontally="false"/>
+            android:scrollHorizontally="false"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -32,15 +40,33 @@
             android:gravity="center"
             android:text="@string/query_output" />
 
-        <TextView
-            android:id="@+id/queryOutput"
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="6"
             android:background="@drawable/border"
-            android:scrollbarAlwaysDrawHorizontalTrack="true"
-            android:scrollbarAlwaysDrawVerticalTrack="true"
-            android:scrollbars="vertical|horizontal" />
+            android:scrollbars="vertical|horizontal"
+            android:layout_weight="6"
+            android:fadeScrollbars="false"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
 
+            <HorizontalScrollView
+                android:id="@+id/horizontalView"
+                android:layout_height="wrap_content"
+                android:scrollbars="horizontal|vertical"
+                android:layout_width="match_parent"
+                android:scrollbarFadeDuration="0"
+                android:scrollbarDefaultDelayBeforeFade="0">
+
+                <TableLayout
+                    android:id="@+id/queryOutputTable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </TableLayout>
+
+            </HorizontalScrollView>
+        </ScrollView>
 
 </LinearLayout>

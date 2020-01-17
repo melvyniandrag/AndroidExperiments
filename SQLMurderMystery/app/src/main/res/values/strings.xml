@@ -6,8 +6,14 @@
     <string name="prompt_button">Prompt</string>
     <string name="schema_button">Schema</string>
     <string name="notepad_button">Notepad</string>
-    <string name="run_query_button">Run Query ( No Semicolon Please )</string>
-    <string name="query_output">Query Output</string>
+    <string name="run_query_button">Run Query</string>
+    <string name="query_output">Scroll up/down left/right through query results</string>
     <string name="see_solution">See Solution</string>
     <string name="check_solution">Check Solution</string>
+    <string name="about_string"> This app was built as a hobby project to incorporate the sqlite3 database from the cool SQL Murder Mystery found here: http://mystery.knightlab.com/ .
+    You should definitely check out the site as the implementation on the website is far superior to this one.
+    </string>
+    <string name="help_string">To play this game you need to know some SQL syntax to query the underlying sqlite3 database in this app.
+        More information can be found here: http://mystery.knightlab.com/ Check the schema button in the options menu to see what tables are included in this database.
+    </string>
 </resources>

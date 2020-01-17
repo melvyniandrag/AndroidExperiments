@@ -13,4 +13,7 @@
     <item android:id="@+id/checkSolution_menu_item"
         android:title="Solution"
         app:showAsAction="never"/>
+    <item android:id="@+id/prompt_menu_item"
+        android:title="See Prompt Again"
+        app:showAsAction="never"/>
 </menu>
